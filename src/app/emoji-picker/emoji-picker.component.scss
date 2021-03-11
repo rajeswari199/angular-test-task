@@ -1,0 +1,27 @@
+@import '../../assets/utilities.scss';
+
+.emoji-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    flex: 1;
+    min-height: 100vh;
+    background: $bg-primary;
+    overflow: scroll;
+    p{
+        margin-bottom: 0;
+        &.emoji-date{
+            @include font(12px, 500, normal, $secondary);
+        }
+        &.emoji-text{
+            @include font(12px, 500, normal, $font-dark);
+        }
+        &.header-title{
+            @include font(14px, 500, normal, $secondary);
+        }
+    }
+    .header-section{
+        margin-bottom: 16px;
+    }
+}

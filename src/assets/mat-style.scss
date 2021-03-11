@@ -1,0 +1,154 @@
+@import "../assets/utilities.scss";
+
+//form
+.mat-form-field {
+    margin-top: 0;
+    width: 100%;
+    textarea {
+        height: 95px;
+        width: 100%;
+        padding: inherit;
+        @include font(14px !important, 500, normal, $font-dark);
+        margin-top: 0;
+        border-color: $border !important;
+        border-radius: $input-radius;
+        font-size: 10px;
+        background-color: $white;
+        outline: none;
+        box-shadow: none;
+        &:hover,
+        &:focus,
+        &:active,
+        &:valid {
+            box-shadow: none;
+            outline: none;
+            font-weight: 500;
+            color: $primary;
+            border-color: $border !important;
+        }
+        &::-webkit-input-placeholder {
+            color: $font-dark1;
+            font-weight: 400;
+        }
+        &::-moz-placeholder {
+            color: $font-dark1;
+            font-weight: 400;
+        }
+        &:-ms-input-placeholder {
+            color: $font-dark1;
+            font-weight: 400;
+        }
+        &:-moz-placeholder {
+            color: $font-dark1;
+            font-weight: 400;
+        }
+    }
+    &:hover,
+    &:focus{
+        box-shadow: none;
+        outline: none;
+        color: $primary;
+        border-color: $border !important;
+    }
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix{
+    padding: 0.5em 0 0.5em 0 !important;
+    border-top: 8px solid transparent !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-flex{
+    &:hover,&:focus{
+        box-shadow: none;
+        outline: none;
+        color: $primary;
+        border-color: $border !important;
+    }
+}
+
+//button
+button.mat-button,
+a.mat-button {
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: $input-radius;
+    padding: 4px 16px;
+    // @include font(14px, 30px, 600, $text-grey-secondary);
+    border: 1px solid transparent;
+    border-radius: 50px !important;
+    .mat-button-wrapper {
+        i {
+            padding-right: 6px;
+            margin-left: -4px;
+            // @include icon-line(20px, 19px, inherit);
+            line-height: 19px;
+        }
+    }
+    .mat-button-focus-overlay {
+        display: none;
+    }
+    &:hover,
+    &:focus {
+        border-color: $bg-primary;
+        background-color: $bg-primary;
+        i {
+            color: $secondary !important;
+        }
+    }
+
+    &.mat-button-disabled,
+    &:disabled,
+    &[disabled] {
+        background-color: $white !important;
+        border-color: $white !important;
+        color: $font-dark1 !important;
+        i {
+            color: $font-dark1 !important;
+        }
+    }
+
+    &.large-btn {
+        line-height: 46px !important;
+    }
+
+    &.mat-primary {
+        color: $primary;
+        i {
+            margin-left: -4px;
+            color: $primary;
+        }
+        &:hover,
+        &:focus {
+            i {
+                color: $primary !important;
+            }
+        }
+    }
+}
+
+.mat-flat-button{
+    border-radius: $round-radius !important;
+    &.mat-primary {
+        color: $white;
+        background: $primary;
+    }
+}
+
+// Mat card
+
+.mat-card {
+    &.main-card {
+        padding: 16px !important;
+        width: 100%;
+        max-width: 400px;
+        height: 100%;
+        background: $white;
+        border-radius: $radius;
+    }
+    &.emoji-card {
+        margin-top: 8px;
+        padding: 16px !important;
+        background: $bg-secondary;
+        border-radius: $radius;
+        box-shadow: none !important;
+    }
+}

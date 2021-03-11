@@ -1,0 +1,34 @@
+<div class="emoji-section">
+  <mat-card class="main-card">
+    <div class="header-section flex a-center j-between">
+      <p class="header-title">Your Diary</p>
+      <mat-icon (click)="addMessage()" class="mat-icons-m t-primary cusror-pointer" aria-hidden="false">arrow_forward</mat-icon>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <textarea placeholder="Write something" id="textarea" matInput [formControl]="message"></textarea>
+      </mat-form-field>
+    </div>
+    <div *ngIf="showEmojiPicker">
+      <emoji-mart emojiSize=20 darkMode="false" (emojiSelect)="addEmoji($event)"></emoji-mart>
+    </div>
+    <div class="flex a-center j-between">
+      <div (click)="toggleEmojiPicker()">
+        <mat-icon class="mat-icons-m t-primary cusror-pointer" aria-hidden="false">mood</mat-icon>
+      </div>
+      <button (click)="addMessage()" mat-flat-button color="primary">Save</button>
+    </div>
+    <div *ngIf="messages.length > 0">
+      <mat-card class="emoji-card" *ngFor="let message of messages">
+        <div class="flex a-center j-between">
+          <div class="flex a-center">
+            <mat-icon class="mat-icons-m t-primary" aria-hidden="false">event_note</mat-icon>
+            <p class="emoji-date">{{message.time | date: 'shortTime'}} | {{message.time | date: 'mediumDate'}}</p>
+          </div>
+          <mat-icon class="mat-icons-m t-primary" aria-hidden="false">more_vert</mat-icon>
+        </div>
+        <p class="emoji-text">{{message.message}}</p>
+      </mat-card>
+    </div>
+  </mat-card>
+</div>
