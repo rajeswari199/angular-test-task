@@ -10,7 +10,7 @@
       </mat-form-field>
     </div>
     <div *ngIf="showEmojiPicker">
-      <emoji-mart emojiSize=20 darkMode="false" (emojiSelect)="addEmoji($event)"></emoji-mart>
+      <emoji-mart showPreview emojiSize=24 darkMode="false" (emojiSelect)="addEmoji($event)"></emoji-mart>
     </div>
     <div class="flex a-center j-between">
       <div (click)="toggleEmojiPicker()">
